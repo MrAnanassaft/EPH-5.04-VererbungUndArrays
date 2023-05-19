@@ -25,4 +25,7 @@ public class Unterrichtsfach {
     public String getFachBezeichnung(){
         return fachBezeichnung;
     }
+    public void bombom(){
+        System.out.println("HIHIHIHA");
+    }
 }
