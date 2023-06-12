@@ -47,6 +47,12 @@ public class Kurs {
      */
     public void addSchueler(Schueler neuerSchueler){
         //TODO Hinzufügen eines Schülers zu einem Kurs.
+        Schueler[] neueSchueler = new Schueler[schuelerDesKurses.length+1];
+        for (int i = 0; i < schuelerDesKurses.length; i++) {
+            neueSchueler[i] = schuelerDesKurses[i];
+        }
+        neueSchueler[schuelerDesKurses.length] = neuerSchueler;
+        schuelerDesKurses = neueSchueler;
     }
 
     /**

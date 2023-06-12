@@ -23,6 +23,7 @@ public class MainController {
                         new MainController();
                     }
                 });
+
     }
 
     /**
@@ -48,6 +49,7 @@ public class MainController {
                 einPaarKurse[i] = new Kurs(deutsch, "D  G"+(i-3));
             }
         }
+
 
 
 

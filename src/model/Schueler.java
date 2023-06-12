@@ -1,17 +1,18 @@
 package model;
 
+import control.MainController;
+
 /**
  * Created by Jean-Pierre on 10.05.2017.
  */
-public class Schueler {
+public class Schueler extends Schulperson{
 
     //Attribute
-    private String name;
-    private int alter;
+
 
     //Referenzen
-    private Kurs[] kurseDesSchuelers;
-    private Tadel[] tadelDesSchuelers;
+
+    private Tadel[] tadelDesSchuelers = new Tadel[0];
 
     /**
      * Ein Objekt der Klasse Schüler.
@@ -19,25 +20,10 @@ public class Schueler {
      * @param alter
      */
     public Schueler(String name, int alter) {
-        this.name = name;
-        this.alter = alter;
+        super(name, alter);
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAlter() {
-        return alter;
-    }
-
-    public void setAlter(int alter) {
-        this.alter = alter;
-    }
 
     /**
      * Ein Kurs wird der Menge der Kurse hinzugefügt.
@@ -45,9 +31,7 @@ public class Schueler {
      * Überlegt euch etwas kluges!
      * @param neuerKurs
      */
-    public void addKurs(Kurs neuerKurs){
-        //TODO Hinzufügen eines Kurses, den ein Schüler aufsuchen muss.
-    }
+
 
     /**
      * Ein Tadel wird der Menge der Tadel hinzugefügt.
@@ -57,6 +41,11 @@ public class Schueler {
      */
     private void addTadel(Tadel neuerTadel){
         //TODO Hinzufügen eins Tadels für den Schüler.
+        Tadel[] neueTadel = new Tadel[tadelDesSchuelers.length+1];
+        for (int i = 0; i < tadelDesSchuelers.length; i++)
+            neueTadel[i] = tadelDesSchuelers[i];
+        neueTadel[kurse.length] = neuerTadel;
+        tadelDesSchuelers = neueTadel;
     }
 
     /**
@@ -65,7 +54,7 @@ public class Schueler {
      * @return
      */
     public String getInfo(){
-        String info = "";
+        String info = getName() + ", " + getAlter() + ", Tadel: " + tadelDesSchuelers.length + ", Kurse: " + kurse.length;
         //TODO Kompakte Zeichenkette zu den Informationen eines Schülers - gut lesbar!
         return info;
     }

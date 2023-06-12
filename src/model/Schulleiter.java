@@ -3,12 +3,11 @@ package model;
 /**
  * Created by Jean-Pierre on 10.05.2017.
  */
-public class Schulleiter {
+public class Schulleiter extends Lehrer{
 
     //Attribute
-    private String name;
-    private int alter;
-    private String besoldungsGruppe;
+
+
 
     //Referenzen
     private Kurs[] kurseDesLehrers;
@@ -22,34 +21,9 @@ public class Schulleiter {
      * @param besoldungsGruppe
      */
     public Schulleiter(String name, int alter, String besoldungsGruppe) {
-        this.name = name;
-        this.alter = alter;
-        this.besoldungsGruppe = besoldungsGruppe;
+        super(name, alter, besoldungsGruppe);
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getAlter() {
-        return alter;
-    }
-
-    public void setAlter(int alter) {
-        this.alter = alter;
-    }
-
-    public String getBesoldungsGruppe() {
-        return besoldungsGruppe;
-    }
-
-    public void setBesoldungsGruppe(String besoldungsGruppe) {
-        this.besoldungsGruppe = besoldungsGruppe;
-    }
 
     /**
      * Ein Kurs wird der Menge der Kurse hinzugefügt.
